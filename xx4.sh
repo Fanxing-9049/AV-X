@@ -4,6 +4,26 @@
 # 老范AV小姐姐工具箱 v1.2
 # 适配多系统：Ubuntu/Debian/CentOS/Alpine/Kali/Arch/RedHat/Fedora/Alma/Rocky
 # ==============================
+# ================== 自动下载依赖文件 ==================
+REPO_URL="https://raw.githubusercontent.com/你的用户名/仓库名/main"
+DEPENDENCIES=("tq.py" "ed2k_generator.py")
+
+check_dependencies() {
+    for file in "${DEPENDENCIES[@]}"; do
+        if [[ ! -f "$file" ]]; then
+            echo -e "\033[33m正在下载依赖文件: $file...\033[0m"
+            if ! curl -sSL "${REPO_URL}/${file}" -o "$file"; then
+                echo -e "\033[31m❌ 下载 $file 失败，请检查网络连接！\033[0m"
+                exit 1
+            fi
+            chmod +x "$file"
+        fi
+    done
+}
+
+# 执行依赖检查
+check_dependencies
+
 
 # 核心配置
 SCRIPT_VERSION="1.2"
