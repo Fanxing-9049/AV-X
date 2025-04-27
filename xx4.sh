@@ -5,7 +5,7 @@
 # 适配多系统：Ubuntu/Debian/CentOS/Alpine/Kali/Arch/RedHat/Fedora/Alma/Rocky
 # ==============================
 # ================== 自动下载依赖文件 ==================
-REPO_URL="https://raw.githubusercontent.com/你的用户名/仓库名/main"
+REPO_URL="https://raw.githubusercontent.com/Fanxing-9049/AV-X/main"
 DEPENDENCIES=("tq.py" "ed2k_generator.py")
 
 check_dependencies() {
