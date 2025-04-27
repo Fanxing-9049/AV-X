@@ -122,7 +122,7 @@ run_script() {
     # 如果选择更新脚本
     if [[ "$script_name" == "update.sh" ]]; then
         echo -e "${GREEN}正在从仓库获取最新版本...${COLOR_RESET}"
-        wget -q https://example.com/xx.sh -O $0
+        wget -q https://github.com/Fanxing-9049/AV-X/blob/main/xx4.sh -O $0
         chmod +x $0
         echo -e "${GREEN}更新完成，正在重新启动脚本！${COLOR_RESET}"
         exec $0
